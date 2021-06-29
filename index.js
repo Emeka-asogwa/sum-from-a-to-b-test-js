@@ -1,16 +1,11 @@
 
 const sum = function(fromN, toN) {
   // Sum all the values from fromN up to toN
-  let count = fromN;
-
-  for (let i = fromN; i < toN; i++) {
-    count = count + i + 1;
-
+  let summation = fromN;
+  if (summation === toN) {
+    return summation;
   }
-
-  return count;
+  return summation + sum(fromN +1, toN); // recursive and stops when summation = fromN.
 };
-
-console.log(sum(3, 7));
 
 module.exports = sum;
